@@ -1,0 +1,62 @@
+CapsuleScan/UI/BrowserSignIn.swift
+  s_0521f8d73d6032::t_732d2979783a1e 10,14,17-19,24,26-30
+  s_0521f8d73d6032::t_665d36e92cb335 1-9,11-13,15-16,20-23,25,31-44
+CapsuleScan/UI/SettingsView.swift
+  s_0521f8d73d6032::t_7e9e0769872353 12-17,33,40
+CapsuleScan/UI/CaptureView.swift
+  s_0521f8d73d6032::t_7e9e0769872353 27,35-41,65-67,74,84,86-87,91-92
+  s_0521f8d73d6032::t_7a940c919cbba3 93
+CapsuleScan/Core/CapsuleDestination.swift
+  s_0521f8d73d6032::t_126baf05115d5c 39
+  s_0521f8d73d6032::t_665d36e92cb335 61
+  s_0521f8d73d6032::t_3c9db540e14ca6 42-46
+CapsuleScanTests/SignInTests.swift
+  s_0521f8d73d6032::t_3a0dd7a468d31d 1-61
+  s_0521f8d73d6032::t_c8bd64842c2ed9 62-73
+CapsuleScan/Core/CapsuleSignIn.swift
+  s_0521f8d73d6032::t_665d36e92cb335 1-101
+CapsuleScanTests/CoreTests.swift
+  s_0521f8d73d6032::t_3a0dd7a468d31d 295
+CapsuleScan/AppServices.swift
+  s_0521f8d73d6032::t_3c9db540e14ca6 11-12,15-17,20,23-25,30-31,33-41,43-73,84-100,102
+CapsuleScan/UI/ItemEditorView.swift
+  s_0521f8d73d6032::t_7e9e0769872353 7,31-34,36-38,41,43-44,52
+CapsuleScan/Core/Domain.swift
+  s_0521f8d73d6032::t_0b183e8788bfbc 16,81,101,111-114,117
+CapsuleScan/UI/ItemEditorModel.swift
+  s_0521f8d73d6032::t_3c9db540e14ca6 70,88
+  s_0521f8d73d6032::t_0b183e8788bfbc 62-64,66,74-76,94
+CapsuleScan/Persistence/WardrobeItem.swift
+  s_0521f8d73d6032::t_0b183e8788bfbc 19,30,38,47
+CapsuleScanTests/PersistenceTests.swift
+  s_0521f8d73d6032::t_3a0dd7a468d31d 74,77,83,91-92,104-147
+  s_0521f8d73d6032::t_bf407ab3a4edb8 148-180
+CapsuleScan/Core/Credentials.swift
+  s_0521f8d73d6032::t_665d36e92cb335 4
+CapsuleScan/Info.plist
+  s_0521f8d73d6032::t_7e9e0769872353 15
+CapsuleScan.xcodeproj/project.pbxproj
+  s_0521f8d73d6032::t_52f65344abe83a 26-31,68-73,80,83,86,89,92,95,116-121,154,160,181-184,209-212,217-220,236,247-250,254
+CapsuleScan/UI/DraftsView.swift
+  s_0521f8d73d6032::t_133e34388c7b69 4,7-9,12-13,17,33
+README.md
+  s_0521f8d73d6032::t_3cd561b15bd0d2 3,5,14,16,18,20,22-26,36,68,73
+docs/verification.md
+  s_0521f8d73d6032::t_c95c98c2ae686b 5,7,9-11,15-24,26
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "7c8c85710a61044b7dc6edfdf4236b8532543dc7",
+  "prompts": {},
+  "sessions": {
+    "s_0521f8d73d6032": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0836b-e052-7f82-9502-659c23c1b21f",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Allen Lin <allenlinsh@gmail.com>"
+    }
+  }
+}
