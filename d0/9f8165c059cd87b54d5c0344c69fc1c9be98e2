@@ -1,0 +1,73 @@
+.github/workflows/ios.yml
+  s_0521f8d73d6032::t_3a80711d3a4c40 1-30
+CapsuleScan.xcodeproj/project.pbxproj
+  s_0521f8d73d6032::t_1245496c15024a 1-449
+CapsuleScan.xcodeproj/xcshareddata/xcschemes/CapsuleScan.xcscheme
+  s_0521f8d73d6032::t_45fc485421e105 1-11
+CapsuleScan/AppServices.swift
+  s_0521f8d73d6032::t_1e3386f499a38b 1-49
+CapsuleScan/Assets.xcassets/AppIcon.appiconset/Contents.json
+  s_0521f8d73d6032::t_8bd85424d97a9e 1
+CapsuleScan/Assets.xcassets/Contents.json
+  s_0521f8d73d6032::t_0030ca3479c70a 1
+CapsuleScan/CapsuleScanApp.swift
+  s_0521f8d73d6032::t_b1dad2d501ded3 1-36
+CapsuleScan/Core/CapsuleDestination.swift
+  s_0521f8d73d6032::t_0b80b54bebde37 1-124
+CapsuleScan/Core/Credentials.swift
+  s_0521f8d73d6032::t_4e5307998219c7 1-40
+CapsuleScan/Core/Domain.swift
+  s_0521f8d73d6032::t_8e2153c60bd6e0 1-132
+CapsuleScan/Core/Extraction.swift
+  s_0521f8d73d6032::t_e7a9ddfd2f5e16 1-90
+CapsuleScan/Core/Images.swift
+  s_0521f8d73d6032::t_28629d718c40bd 1-77
+CapsuleScan/Core/SaveCoordinator.swift
+  s_0521f8d73d6032::t_58721608c162cf 1-65
+CapsuleScan/Info.plist
+  s_0521f8d73d6032::t_613152409bdba0 1-18
+CapsuleScan/Persistence/WardrobeItem.swift
+  s_0521f8d73d6032::t_052f9255219bef 1-73
+CapsuleScan/UI/CaptureView.swift
+  s_0521f8d73d6032::t_f92bbf635e1095 1-143
+CapsuleScan/UI/ItemEditorModel.swift
+  s_0521f8d73d6032::t_810faefcc85d78 1-98
+CapsuleScan/UI/ItemEditorView.swift
+  s_0521f8d73d6032::t_bdbd99c0f72dc0 1-67
+CapsuleScan/UI/LibraryView.swift
+  s_0521f8d73d6032::t_9e796c8ebcccd6 1-49
+CapsuleScan/UI/SettingsView.swift
+  s_0521f8d73d6032::t_4ed7c5610027ff 1-48
+CapsuleScanTests/CoreTests.swift
+  s_0521f8d73d6032::t_b76d6f43faa00c 1-259
+CapsuleScanTests/PersistenceTests.swift
+  s_0521f8d73d6032::t_e70cf7227a56d5 1-92
+Package.swift
+  s_0521f8d73d6032::t_273698a6c6a10a 1-13
+README.md
+  s_0521f8d73d6032::t_dffec2ef6ccb9c 3-69
+docs/verification.md
+  s_0521f8d73d6032::t_834a51229a3584 1-22
+scripts/generate-project.py
+  s_0521f8d73d6032::t_59d97333b87a08 1-80
+scripts/make-icon.swift
+  s_0521f8d73d6032::t_b0cf50a46ac7d6 1-23
+scripts/test-ios.sh
+  s_0521f8d73d6032::t_fa750775a13399 1-19
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "d09f8165c059cd87b54d5c0344c69fc1c9be98e2",
+  "prompts": {},
+  "sessions": {
+    "s_0521f8d73d6032": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0836b-e052-7f82-9502-659c23c1b21f",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Allen Lin <allenlinsh@gmail.com>"
+    }
+  }
+}
