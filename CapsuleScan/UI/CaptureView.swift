@@ -21,6 +21,7 @@ private struct PhotoDraft: Identifiable { let id = UUID(); let image: Data }
     @State private var photo: PhotosPickerItem?
     @State private var draft: PhotoDraft?
     @State private var showingCamera = false
+    @State private var pendingCameraPhoto: Data?
     @State private var cameraDenied = false
     @State private var processing = false
     @State private var showingLibrary = false
@@ -65,8 +66,11 @@ private struct PhotoDraft: Identifiable { let id = UUID(); let image: Data }
                 ToolbarItem(placement: .topBarLeading) { NavigationLink { LibraryView() } label: { Image(systemName: "square.grid.2x2") }.accessibilityLabel("local items") }
                 ToolbarItem(placement: .topBarTrailing) { NavigationLink { SettingsView() } label: { Image(systemName: "gearshape") }.accessibilityLabel("settings") }
             }
-            .sheet(isPresented: $showingCamera) {
-                CameraPicker { data in showingCamera = false; if let data { prepare(data) } }
+            .sheet(isPresented: $showingCamera, onDismiss: {
+                // Present review only after the camera sheet has finished dismissing.
+                if let data = pendingCameraPhoto { pendingCameraPhoto = nil; prepare(data) }
+            }) {
+                CameraPicker { data in pendingCameraPhoto = data; showingCamera = false }
                     .ignoresSafeArea()
             }
             .sheet(item: $draft, onDismiss: {
