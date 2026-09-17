@@ -1,0 +1,29 @@
+CapsuleScan.xcodeproj/project.pbxproj
+  s_0521f8d73d6032::t_48afa7b0c66f09 258,283
+CapsuleScan/UI/ItemEditorModel.swift
+  s_0521f8d73d6032::t_e1eed6422b968d 25-32
+CapsuleScan/UI/ItemEditorView.swift
+  s_0521f8d73d6032::t_f148ac721be9fb 19-20,25-28,52,56
+CapsuleScanTests/CoreTests.swift
+  s_0521f8d73d6032::t_64de024ffe6d62 260-291
+Package.swift
+  s_0521f8d73d6032::t_fed0dc4b3ec249 1
+scripts/generate-project.py
+  s_0521f8d73d6032::t_84c5f2e1604359 42
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "7479e21963d7979909317b7f4fc26a1326e7c230",
+  "prompts": {},
+  "sessions": {
+    "s_0521f8d73d6032": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0836b-e052-7f82-9502-659c23c1b21f",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Allen Lin <allenlinsh@gmail.com>"
+    }
+  }
+}
