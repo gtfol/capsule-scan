@@ -1,0 +1,21 @@
+.gitignore
+  s_0521f8d73d6032::t_5f1bacc8e8b019 1-7
+README.md
+  s_0521f8d73d6032::t_2692cc724faddf 1-3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "dd4a5baf35bef52c1ea45ce9983fd66dec855ac3",
+  "prompts": {},
+  "sessions": {
+    "s_0521f8d73d6032": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0836b-e052-7f82-9502-659c23c1b21f",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Allen Lin <allenlinsh@gmail.com>"
+    }
+  }
+}
