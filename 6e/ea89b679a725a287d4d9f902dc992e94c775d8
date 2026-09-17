@@ -1,0 +1,39 @@
+.github/workflows/ios.yml
+  s_0521f8d73d6032::t_6e140c88a94405 13-21,28,33
+CapsuleScan.xcodeproj/project.pbxproj
+  s_0521f8d73d6032::t_2c6bffcf7c6f0f 252-253,279-280
+CapsuleScan/CapsuleScanApp.swift
+  s_0521f8d73d6032::t_c3f0bf5131d224 28-30
+CapsuleScan/Core/Extraction.swift
+  s_0521f8d73d6032::t_1ed1fade5d6575 22
+CapsuleScan/Persistence/WardrobeItem.swift
+  s_0521f8d73d6032::t_d57cdc4d186451 49-54
+CapsuleScan/UI/ItemEditorView.swift
+  s_0521f8d73d6032::t_424b043fb41b93 39
+CapsuleScanTests/PersistenceTests.swift
+  s_0521f8d73d6032::t_904a64d9103839 6-17
+README.md
+  s_0521f8d73d6032::t_ae734ae340822b 50
+docs/verification.md
+  s_0521f8d73d6032::t_eb434ca1956837 5
+scripts/generate-project.py
+  s_0521f8d73d6032::t_cb1c6d06f78085 42
+scripts/test-ios.sh
+  s_0521f8d73d6032::t_0cf93d89518dc6 19-20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "6eea89b679a725a287d4d9f902dc992e94c775d8",
+  "prompts": {},
+  "sessions": {
+    "s_0521f8d73d6032": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0836b-e052-7f82-9502-659c23c1b21f",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Allen Lin <allenlinsh@gmail.com>"
+    }
+  }
+}
