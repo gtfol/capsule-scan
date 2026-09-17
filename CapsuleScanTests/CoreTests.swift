@@ -289,3 +289,16 @@ final class MediaTests: XCTestCase {
         catch { XCTAssertEqual(error as? ScanError, .storage) }
     }
 }
+
+actor CleanupFailureCredentials: CredentialStore {
+    private let value = UUID().uuidString
+    func read(_ credential: Credential) -> String? { value }
+    func write(_ value: String?, for credential: Credential) throws { throw ScanError.keychain }
+}
+final class AuthenticationTests: XCTestCase {
+    func testRejectedTokenStillReportsAuthenticationIfKeychainIsTemporarilyLocked() async {
+        let destination = CapsuleDestination(credentials: CleanupFailureCredentials(), transport: StubHTTP(status: 403))
+        do { _ = try await destination.save(body: Data(), idempotencyKey: UUID().uuidString); XCTFail() }
+        catch { XCTAssertEqual(error as? ScanError, .authentication) }
+    }
+}

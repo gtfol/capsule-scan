@@ -4,7 +4,7 @@
 
 The first PR runs the iPhone simulator build, XCTest suite, unsigned physical-device build, and the shared macOS core tests in GitHub Actions with Xcode 26.6. See the PR checks for the exact tested commit and result.
 
-Local checks so far: core Swift compilation with Swift 6.3.2 (Swift 5 language mode), project and Info.plist syntax validation. Local XCTest/simulator verification is pending the Xcode installation; Command Line Tools alone do not contain XCTest.
+Local checks so far: core Swift compilation with Swift 6.3.2 (Swift 6 language mode), project and Info.plist syntax validation. Local XCTest/simulator verification is pending the Xcode installation; Command Line Tools alone do not contain XCTest.
 
 ## Before calling the device flow verified
 

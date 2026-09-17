@@ -53,7 +53,9 @@ struct CapsuleDestination: WardrobeDestination {
             let error = Self.mapError(status: result.status, data: result.data)
             if error == .authentication {
                 // Do not erase a replacement token entered while this request was running.
-                if try await credentials.read(.capsuleToken) == token { try await credentials.write(nil, for: .capsuleToken) }
+                if (try? await credentials.read(.capsuleToken)) == token {
+                    try? await credentials.write(nil, for: .capsuleToken)
+                }
             }
             throw error
         }

@@ -10,6 +10,7 @@ import SwiftData
     let transport: any HTTPTransport
     let saves: CapsuleSaveCoordinator
     private let extractionOverride: (any ItemExtractor)?
+    private var authenticationRejected = false
     @Published private(set) var connected = false
     @Published private(set) var visionEnabled = false
     @Published var connectionMessage: String?
@@ -23,13 +24,14 @@ import SwiftData
     }
     func refreshCredentials() async {
         do {
-            connected = !(try await credentials.read(.capsuleToken) ?? "").isEmpty
+            let tokenExists = !(try await credentials.read(.capsuleToken) ?? "").isEmpty
+            connected = tokenExists && !authenticationRejected
             visionEnabled = !(try await credentials.read(.visionAPIKey) ?? "").isEmpty
         } catch { connected = false; visionEnabled = false; connectionMessage = ScanError.keychain.localizedDescription }
     }
     func setCredential(_ value: String?, for kind: Credential) async throws {
         try await credentials.write(value?.trimmingCharacters(in: .whitespacesAndNewlines), for: kind)
-        connectionMessage = nil
+        if kind == .capsuleToken { authenticationRejected = false; connectionMessage = nil }
         await refreshCredentials()
     }
     func extractor() -> any ItemExtractor {
@@ -40,6 +42,7 @@ import SwiftData
         do { try await saves.send(id: id) }
         catch {
             if error as? ScanError == .authentication || error as? ScanError == .notConnected {
+                authenticationRejected = true
                 connected = false
                 connectionMessage = ScanError.authentication.localizedDescription
             }
