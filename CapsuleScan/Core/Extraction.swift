@@ -19,7 +19,7 @@ actor OnDeviceItemExtractor: ItemExtractor {
         let centered = input.cropped(to: crop).transformed(by: CGAffineTransform(translationX: -crop.minX, y: -crop.minY))
         let scaled = centered.transformed(by: CGAffineTransform(scaleX: 64 / crop.width, y: 64 / crop.height))
         var pixels = [UInt8](repeating: 0, count: 64 * 64 * 4)
-        let context = CIContext(options: [.workingColorSpace: CGColorSpaceCreateDeviceRGB()])
+        let context = CIContext(options: [.useSoftwareRenderer: true, .workingColorSpace: CGColorSpaceCreateDeviceRGB()])
         context.render(scaled, toBitmap: &pixels, rowBytes: 64 * 4, bounds: CGRect(x: 0, y: 0, width: 64, height: 64), format: .RGBA8, colorSpace: CGColorSpaceCreateDeviceRGB())
         var bins: [Int: (count: Int, r: Int, g: Int, b: Int)] = [:]
         for offset in stride(from: 0, to: pixels.count, by: 4) {

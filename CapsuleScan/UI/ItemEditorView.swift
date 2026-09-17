@@ -36,7 +36,7 @@ import SwiftUI
                     if !services.connected {
                         Text("not connected. save locally, or connect in settings.").font(.caption).foregroundStyle(.secondary)
                         NavigationLink("settings") { SettingsView() }
-                    } else if model.fields.category == nil {
+                    } else if model.sendToCapsule && model.fields.category == nil {
                         Text("choose a category, or capsule will use tops.").font(.caption).foregroundStyle(.secondary)
                     }
                     if let error = model.record?.lastCapsuleError, model.error == nil { Text(error).font(.footnote).foregroundStyle(.secondary) }

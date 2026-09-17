@@ -249,6 +249,8 @@
 		73EBF6644258C120893E685D = {
 			isa = "XCBuildConfiguration";
 			buildSettings = {
+				COPY_PHASE_STRIP = "NO";
+				LM_SKIP_METADATA_EXTRACTION = "YES";
 				CLANG_ENABLE_MODULES = "YES";
 				CLANG_ENABLE_OBJC_ARC = "YES";
 				GCC_C_LANGUAGE_STANDARD = "gnu17";
@@ -274,6 +276,8 @@
 		0B0C687DF8B6B8DC790B519C = {
 			isa = "XCBuildConfiguration";
 			buildSettings = {
+				COPY_PHASE_STRIP = "NO";
+				LM_SKIP_METADATA_EXTRACTION = "YES";
 				CLANG_ENABLE_MODULES = "YES";
 				CLANG_ENABLE_OBJC_ARC = "YES";
 				GCC_C_LANGUAGE_STANDARD = "gnu17";

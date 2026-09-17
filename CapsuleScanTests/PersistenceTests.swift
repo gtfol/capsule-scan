@@ -3,7 +3,18 @@ import SwiftData
 @testable import CapsuleScan
 
 final class PersistenceTests: XCTestCase {
-    @MainActor func testSaveRoundTripAndInterruptedRecovery() throws {
+    @MainActor func testFreshDiskStorePersistsAcrossContainerRecreation() async throws {
+        let directory = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+        defer { try? FileManager.default.removeItem(at: directory) }
+        let item = ItemRecord(localImageReference: UUID().uuidString + ".jpg", fields: ItemFields(name: "shirt", price: "19.99"))
+        do {
+            let first = try SwiftDataItemStore.makeContainer(in: directory)
+            try SwiftDataItemStore(context: first.mainContext).save(item)
+        }
+        let reopened = try SwiftDataItemStore.makeContainer(in: directory)
+        XCTAssertEqual(try SwiftDataItemStore(context: reopened.mainContext).record(id: item.id), item)
+    }
+    @MainActor func testSaveRoundTripAndInterruptedRecovery() async throws {
         let container = try ModelContainer(for: WardrobeItem.self, configurations: ModelConfiguration(isStoredInMemoryOnly: true))
         let store = SwiftDataItemStore(context: container.mainContext)
         var item = ItemRecord(localImageReference: UUID().uuidString + ".jpg", fields: ItemFields(name: "", color: "washed black", price: "19.99"))

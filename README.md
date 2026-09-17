@@ -47,7 +47,7 @@ With Xcode selected and an iPhone simulator installed:
 scripts/test-ios.sh
 ```
 
-This builds the iPhone simulator target, runs XCTest on an available iPhone simulator, then compiles the unsigned physical-device target. Results are written to `TestResults.xcresult`; move or remove a previous result bundle before repeating. It does not install to or test a physical camera.
+This builds the iPhone simulator and unsigned physical-device targets, then runs XCTest on an available iPhone simulator. Results are written to `TestResults.xcresult`; move or remove a previous result bundle before repeating. It does not install to or test a physical camera.
 
 The same networking, extraction, image, and idempotency tests can also run on macOS with the full Xcode developer directory selected:
 

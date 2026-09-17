@@ -25,9 +25,9 @@ import SwiftData
     }
     @MainActor private func start() {
         do {
-            let configuration = ModelConfiguration(cloudKitDatabase: .none)
-            let container = try ModelContainer(for: WardrobeItem.self, configurations: configuration)
-            let directory = URL.applicationSupportDirectory.appendingPathComponent("garment-files", isDirectory: true)
+            let support = URL.applicationSupportDirectory
+            let container = try SwiftDataItemStore.makeContainer(in: support)
+            let directory = support.appendingPathComponent("garment-files", isDirectory: true)
             let app = AppServices(container: container, media: LocalMediaStore(directory: directory))
             try app.items.recoverInterruptedSaves()
             services = app

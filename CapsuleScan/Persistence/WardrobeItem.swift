@@ -46,6 +46,12 @@ import SwiftData
 }
 
 @MainActor final class SwiftDataItemStore: ItemStoring {
+    static func makeContainer(in directory: URL) throws -> ModelContainer {
+        // Provision the directory before Core Data opens its SQLite files on first launch.
+        try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
+        let configuration = ModelConfiguration(url: directory.appendingPathComponent("default.store"), cloudKitDatabase: .none)
+        return try ModelContainer(for: WardrobeItem.self, configurations: configuration)
+    }
     let context: ModelContext
     init(context: ModelContext) { self.context = context; context.autosaveEnabled = false }
     private func model(id: UUID) throws -> WardrobeItem? {

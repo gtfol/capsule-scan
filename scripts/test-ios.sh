@@ -15,5 +15,6 @@ for runtime in sorted(runtimes, reverse=True):
 sys.exit("Install an iOS simulator runtime in Xcode Settings > Components.")
 ')
 xcodebuild -project CapsuleScan.xcodeproj -scheme CapsuleScan -destination 'generic/platform=iOS Simulator' -derivedDataPath DerivedData CODE_SIGNING_ALLOWED=NO build
-xcodebuild -project CapsuleScan.xcodeproj -scheme CapsuleScan -destination "platform=iOS Simulator,id=$simulator_id" -derivedDataPath DerivedData -resultBundlePath TestResults.xcresult CODE_SIGNING_ALLOWED=NO test
 xcodebuild -project CapsuleScan.xcodeproj -scheme CapsuleScan -destination 'generic/platform=iOS' -derivedDataPath DerivedData CODE_SIGNING_ALLOWED=NO build
+xcrun simctl bootstatus "$simulator_id" -b
+xcodebuild -project CapsuleScan.xcodeproj -scheme CapsuleScan -parallel-testing-enabled NO -destination "platform=iOS Simulator,id=$simulator_id" -derivedDataPath DerivedData -resultBundlePath TestResults.xcresult CODE_SIGNING_ALLOWED=NO test

@@ -2,7 +2,7 @@
 
 ## Automated checks
 
-The first PR runs the iPhone simulator build, XCTest suite, unsigned physical-device build, and the shared macOS core tests in GitHub Actions with Xcode 26.6. See the PR checks for the exact tested commit and result.
+The iPhone simulator build, XCTest suite, unsigned physical-device build, and shared macOS core tests pass in GitHub Actions with Xcode 26.6 / iOS 26.5. See [PR #1 checks](https://github.com/gtfol/capsule-scan/pull/1/checks) for the exact tested commit and result. The final suite includes 28 iPhone tests and 23 shared core tests on macOS.
 
 Local checks so far: core Swift compilation with Swift 6.3.2 (Swift 6 language mode), project and Info.plist syntax validation. Local XCTest/simulator verification is pending the Xcode installation; Command Line Tools alone do not contain XCTest.
 
