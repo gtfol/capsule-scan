@@ -16,16 +16,16 @@ import SwiftUI
             if model.extracting { HStack { ProgressView(); Text("reading details…").font(.footnote).foregroundStyle(.secondary) } }
             if let message = model.message { Text(message).font(.footnote).foregroundStyle(.secondary) }
             Section("item") {
-                TextField("name", text: binding(\.name, field: .name))
-                TextField("brand", text: binding(\.brand, field: .brand))
+                LabeledContent("name") { TextField("name", text: binding(\.name, field: .name)).multilineTextAlignment(.trailing).accessibilityLabel("name") }
+                LabeledContent("brand") { TextField("brand", text: binding(\.brand, field: .brand)).multilineTextAlignment(.trailing).accessibilityLabel("brand") }
                 Picker("category", selection: Binding(get: { model.fields.category }, set: { model.touched(.category); model.fields.category = $0 })) {
                     Text("not set").tag(Optional<GarmentCategory>.none)
                     ForEach(GarmentCategory.allCases) { Text($0.rawValue).tag(Optional($0)) }
                 }
-                TextField("color", text: binding(\.color, field: .color))
-                TextField("size", text: $model.fields.size)
-                TextField("price", text: $model.priceText).keyboardType(.decimalPad)
-                TextField("currency", text: $model.fields.currency).textInputAutocapitalization(.characters).autocorrectionDisabled()
+                LabeledContent("color") { TextField("color", text: binding(\.color, field: .color)).multilineTextAlignment(.trailing).accessibilityLabel("color") }
+                LabeledContent("size") { TextField("size", text: $model.fields.size).multilineTextAlignment(.trailing).accessibilityLabel("size") }
+                LabeledContent("price") { TextField("optional", text: $model.priceText).keyboardType(.decimalPad).multilineTextAlignment(.trailing).accessibilityLabel("price") }
+                LabeledContent("currency") { TextField("usd", text: $model.fields.currency).textInputAutocapitalization(.characters).autocorrectionDisabled().multilineTextAlignment(.trailing).accessibilityLabel("currency") }
             }.disabled(model.saving)
             Section {
                 if model.record?.capsuleSaveState.completed == true {
@@ -49,10 +49,11 @@ import SwiftUI
                 HStack { Spacer(); if model.saving { ProgressView() }; Text(model.saving ? "saving…" : model.record?.capsuleSaveState == .failed && model.sendToCapsule ? "save and retry" : "save"); Spacer() }
             }.disabled(model.saving || (model.image == nil && model.record == nil))
         }
+        .scrollDismissesKeyboard(.interactively)
         .navigationTitle(model.record == nil ? "review item" : "edit item")
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
-        .toolbar { ToolbarItem(placement: .cancellationAction) { Button("close") { confirmDiscard = true }.disabled(model.saving) } }
+        .toolbar { ToolbarItem(placement: .cancellationAction) { Button("close") { if model.hasUnsavedChanges { confirmDiscard = true } else { dismiss() } }.disabled(model.saving) } }
         .confirmationDialog("leave without saving changes?", isPresented: $confirmDiscard, titleVisibility: .visible) {
             Button("discard changes", role: .destructive) { dismiss() }
             Button("keep editing", role: .cancel) {}

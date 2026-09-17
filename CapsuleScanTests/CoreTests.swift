@@ -257,3 +257,35 @@ final class IdempotencyTests: XCTestCase {
         let requests = await destination.requests; XCTAssertEqual(requests.count, 0)
     }
 }
+
+struct OversizedImage: ImageProcessing {
+    func jpeg(_ data: Data, maxEdge: Int, quality: Double) -> ProcessedImage {
+        ProcessedImage(data: Data(repeating: 0, count: 1_500_001), width: maxEdge, height: maxEdge)
+    }
+}
+
+final class MediaTests: XCTestCase {
+    func testOversizedPayloadNeverEscapesLimit() async {
+        do {
+            _ = try await CapsulePayloadBuilder(images: OversizedImage()).prepare(fields: ItemFields(name: "shirt"), image: Data())
+            XCTFail("expected an image-size error")
+        } catch { XCTAssertEqual(error as? ScanError, .imageTooLarge) }
+    }
+    func testPortraitPhotoIsLimited() async throws {
+        let output = try await ImageProcessor().jpeg(CoreTests.fixtureImage(width: 1800, height: 3200), maxEdge: 4000, quality: 0.85)
+        XCTAssertEqual(output.width, 900); XCTAssertEqual(output.height, 1600)
+    }
+    func testMediaReferenceSurvivesStoreRecreationAndRejectsTraversal() async throws {
+        let directory = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+        defer { try? FileManager.default.removeItem(at: directory) }
+        let store = LocalMediaStore(directory: directory)
+        let bytes = Data([3, 4, 5])
+        let reference = try await store.write(bytes, extension: "jpg")
+        XCTAssertFalse(reference.contains("/"))
+        let reopened = LocalMediaStore(directory: directory)
+        let read = try await reopened.read(reference)
+        XCTAssertEqual(read, bytes)
+        do { _ = try await reopened.read("../" + reference); XCTFail() }
+        catch { XCTAssertEqual(error as? ScanError, .storage) }
+    }
+}

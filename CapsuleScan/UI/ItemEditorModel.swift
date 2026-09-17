@@ -22,6 +22,14 @@ import SwiftUI
         priceText = Price.display(record?.fields.price)
         sendToCapsule = services.connected && record?.capsuleSaveState.completed != true
     }
+    var hasUnsavedChanges: Bool {
+        guard let record else { return true }
+        var current = fields
+        do {
+            current.price = try Price.canonical(priceText)
+            return try current.validated() != record.fields
+        } catch { return true }
+    }
     func touched(_ field: Field) { edited.insert(field) }
     func start() async {
         guard !started else { return }
