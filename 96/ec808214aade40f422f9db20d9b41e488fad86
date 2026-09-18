@@ -1,0 +1,43 @@
+scripts/generate-project.py
+  s_0521f8d73d6032::t_666bd2048e1eed 28-31,35,43,47
+README.md
+  s_0521f8d73d6032::t_a00fe64745b680 7-8,34
+  s_0521f8d73d6032::t_22a13e87dd33e9 35
+CapsuleScan/UI/Interface.swift
+  s_0521f8d73d6032::t_032188060de996 1-81
+CapsuleScan/CapsuleScanApp.swift
+  s_0521f8d73d6032::t_032188060de996 14,16,23-24
+CapsuleScan/Info.plist
+  s_0521f8d73d6032::t_666bd2048e1eed 14-15
+CapsuleScan/UI/SettingsView.swift
+  s_0521f8d73d6032::t_032188060de996 10-64,66-67,69-70,73,77,81
+CapsuleScan/UI/DraftsView.swift
+  s_0521f8d73d6032::t_666bd2048e1eed 6,14-18,28-31,34,37,39-45
+docs/verification.md
+  s_0521f8d73d6032::t_40d7b2b1c0bd0b 5-6
+CapsuleScan/UI/ItemEditorView.swift
+  s_0521f8d73d6032::t_666bd2048e1eed 43
+  s_0521f8d73d6032::t_027b093fc0daed 11,14,16-18,29-34,38,40-42,47-51,53-55,60-67
+CapsuleScan/UI/CaptureView.swift
+  s_0521f8d73d6032::t_027b093fc0daed 38-40,43-44,46,53,56-57,59,62-65,69-71,75-81
+CapsuleScan.xcodeproj/project.pbxproj
+  s_0521f8d73d6032::t_573dc71cad135d 86-91,140-157,178,245-248,264,289-300,304,394,414
+CapsuleScan/Resources/Lato-OFL.txt
+  s_0521f8d73d6032::t_9d7160a5f9f527 1-93
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "96ec808214aade40f422f9db20d9b41e488fad86",
+  "prompts": {},
+  "sessions": {
+    "s_0521f8d73d6032": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0836b-e052-7f82-9502-659c23c1b21f",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Allen Lin <allenlinsh@gmail.com>"
+    }
+  }
+}
