@@ -2,6 +2,8 @@
 
 ## Automated checks
 
+The interface update for 1.0 (2) passes all 38 iPhone tests and 28 macOS core tests on Xcode 26.6 / iOS 26.5. The simulator build and unsigned release archive for physical iPhone also pass without warnings. It bundles Lato and its license, removes the green accent and inset form cards, and moves the photo-details explanation into a tappable popover.
+
 The sign-in/capture-companion change passes 38 iPhone XCTest tests and 28 shared macOS core tests locally with Xcode 26.6 / iOS 26.5. The iPhone simulator build also passes with compiler warnings treated as errors. Tests cover the PKCE request and callback, cancellation, Keychain session persistence, account-bound drafts, failed-save recovery, exact-body idempotency, request limits, image processing, and success cleanup.
 
 Capsule’s companion server suite verifies code exchange against a disposable local Postgres database: origin/account checks, PKCE, concurrent single-use consumption, expiry, session revocation, restricted scopes, and token revocation. No production wardrobe is modified by these tests.
