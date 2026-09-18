@@ -1,0 +1,38 @@
+CapsuleScan/Core/Credentials.swift
+  s_0521f8d73d6032::t_2f500f0c433cea 11-12
+scripts/test-ios.sh
+  s_0521f8d73d6032::t_cc357400a6e921 17-19,22
+CapsuleScan/UI/Interface.swift
+  s_0521f8d73d6032::t_ffac163c60b75d 43,76-79,81
+CapsuleScan/Core/Domain.swift
+  s_0521f8d73d6032::t_2f500f0c433cea 122
+README.md
+  s_0521f8d73d6032::t_a41b95f25f37bf 60-61
+docs/verification.md
+  s_0521f8d73d6032::t_0761fbcea1eb1e 5-9
+CapsuleScan/UI/SettingsView.swift
+  s_0521f8d73d6032::t_7ed5a9f8bdce95 45-46
+  s_0521f8d73d6032::t_ffac163c60b75d 5,42,44,79-81
+  s_0521f8d73d6032::t_0061c00b304233 82
+CapsuleScanTests/KeychainTests.swift
+  s_0521f8d73d6032::t_2f500f0c433cea 1-8,28-30
+  s_0521f8d73d6032::t_e6aef7f642088d 9-27
+CapsuleScan.xcodeproj/project.pbxproj
+  s_0521f8d73d6032::t_82cc038ad6d0e3 116-121,190,277-280,292
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "3123a0c8db9f4e786a84e4950faac85fbc19f8fd",
+  "prompts": {},
+  "sessions": {
+    "s_0521f8d73d6032": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0836b-e052-7f82-9502-659c23c1b21f",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Allen Lin <allenlinsh@gmail.com>"
+    }
+  }
+}
