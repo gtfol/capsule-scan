@@ -1,0 +1,39 @@
+CapsuleScan/UI/ItemEditorView.swift
+  s_0521f8d73d6032::t_e61f84376afc6f 17-34
+CapsuleScan/AppServices.swift
+  s_0521f8d73d6032::t_e61f84376afc6f 9,26-28
+CapsuleScan/UI/ItemEditorModel.swift
+  s_0521f8d73d6032::t_e61f84376afc6f 10-13,19-20,25,47-60,79-94
+CapsuleScanTests/PersistenceTests.swift
+  s_0521f8d73d6032::t_d69f615c7aca4c 53-76,79,81-137
+docs/privacy.md
+  s_0521f8d73d6032::t_9b8798b94e3d29 3,7
+CapsuleScanTests/IsolationTests.swift
+  s_0521f8d73d6032::t_c2a8e0e93fd060 29-30
+  s_0521f8d73d6032::t_d69f615c7aca4c 1-28,31-48
+scripts/generate-project.py
+  s_0521f8d73d6032::t_c2a8e0e93fd060 47
+README.md
+  s_0521f8d73d6032::t_9b8798b94e3d29 20-23
+CapsuleScan/Core/Isolation.swift
+  s_0521f8d73d6032::t_e61f84376afc6f 1-2,4-56
+  s_0521f8d73d6032::t_c2a8e0e93fd060 3
+docs/verification.md
+  s_0521f8d73d6032::t_4de7e00fece817 5-9,36
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "3e6e31b6ded2087b7992655f83e17cb1cc40eb80",
+  "prompts": {},
+  "sessions": {
+    "s_0521f8d73d6032": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0836b-e052-7f82-9502-659c23c1b21f",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Allen Lin <allenlinsh@gmail.com>"
+    }
+  }
+}
