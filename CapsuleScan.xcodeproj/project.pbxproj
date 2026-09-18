@@ -113,6 +113,12 @@
 			path = "CapsuleScanTests/CoreTests.swift";
 			sourceTree = "<group>";
 		};
+		D74D43DE7B6327B56F9B0598 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "CapsuleScanTests/KeychainTests.swift";
+			sourceTree = "<group>";
+		};
 		0D8BC12AEBDB07B54CEBE263 = {
 			isa = "PBXFileReference";
 			lastKnownFileType = "sourcecode.swift";
@@ -181,7 +187,7 @@
 		};
 		C4E2E7F217DE3642E7714F4E = {
 			isa = "PBXGroup";
-			children = ("31C3E4BD6BD5F378D1CF562D", "0D8BC12AEBDB07B54CEBE263", "47FAC5734B4F8C567FE6382B",);
+			children = ("31C3E4BD6BD5F378D1CF562D", "D74D43DE7B6327B56F9B0598", "0D8BC12AEBDB07B54CEBE263", "47FAC5734B4F8C567FE6382B",);
 			name = "CapsuleScanTests";
 			sourceTree = "<group>";
 		};
@@ -268,6 +274,10 @@
 			isa = "PBXBuildFile";
 			fileRef = "31C3E4BD6BD5F378D1CF562D";
 		};
+		FD719DEF61B5E08BCDC15571 = {
+			isa = "PBXBuildFile";
+			fileRef = "D74D43DE7B6327B56F9B0598";
+		};
 		F0E34A0AC6A2F9747A066978 = {
 			isa = "PBXBuildFile";
 			fileRef = "0D8BC12AEBDB07B54CEBE263";
@@ -279,7 +289,7 @@
 		DEE94446A282611C16F7781C = {
 			isa = "PBXSourcesBuildPhase";
 			buildActionMask = "2147483647";
-			files = ("4AA1F926FE1C69EBE636FACB", "F0E34A0AC6A2F9747A066978", "6BA9A859C316D8303FE1E5C7",);
+			files = ("4AA1F926FE1C69EBE636FACB", "FD719DEF61B5E08BCDC15571", "F0E34A0AC6A2F9747A066978", "6BA9A859C316D8303FE1E5C7",);
 			runOnlyForDeploymentPostprocessing = "0";
 		};
 		5E4916B74BA1E5B1CF73D699 = {

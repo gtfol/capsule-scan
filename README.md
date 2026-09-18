@@ -57,6 +57,8 @@ scripts/test-ios.sh
 
 This builds the iPhone simulator and unsigned physical-device targets, then runs XCTest on an available iPhone simulator. Results are written to `TestResults.xcresult`; move or remove a previous result bundle before repeating. It does not install to or test a physical camera.
 
+Keep simulator signing enabled (the script uses ad-hoc signing, with no Apple account required). `CODE_SIGNING_ALLOWED=NO` removes the simulator’s Keychain identity and prevents sign-in credentials from being saved. The test suite exercises the real system Keychain in an isolated namespace to catch this setup error.
+
 The same networking, extraction, image, and idempotency tests can also run on macOS with the full Xcode developer directory selected:
 
 ```sh

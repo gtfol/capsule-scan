@@ -2,6 +2,7 @@ import SwiftUI
 
 @MainActor struct SettingsView: View {
     @EnvironmentObject private var services: AppServices
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     @State private var visionKey = ""
     @State private var error: String?
     @State private var busy = false
@@ -38,10 +39,11 @@ import SwiftUI
                             "your key stays in Keychain."
                         ])
                         Spacer(minLength: 0)
-                        Text(services.visionEnabled ? "openai" : "on device")
-                            .font(CapsuleStyle.caption).foregroundStyle(CapsuleStyle.secondary)
+                        if !dynamicTypeSize.isAccessibilitySize { extractionStatus.fixedSize() }
                     }
-                    SecureField("openai api key", text: $visionKey)
+                    if dynamicTypeSize.isAccessibilitySize { extractionStatus }
+                    SecureField("openai api key", text: $visionKey,
+                                prompt: Text("openai api key").foregroundStyle(CapsuleStyle.secondary))
                         .textContentType(nil).textInputAutocapitalization(.never).autocorrectionDisabled()
                         .accessibilityLabel("openai api key")
                         .padding(.vertical, 12).frame(minHeight: 44)
@@ -73,6 +75,10 @@ import SwiftUI
         .toolbar { ToolbarItem(placement: .principal) { Text("settings").font(CapsuleStyle.heading) } }
         .task { await services.refreshCredentials() }
         .onDisappear { visionKey = "" }
+    }
+    private var extractionStatus: some View {
+        Text(services.visionEnabled ? "openai" : "on device")
+            .font(CapsuleStyle.caption).foregroundStyle(CapsuleStyle.secondary)
     }
     private func update(_ value: String?) {
         busy = true; error = nil

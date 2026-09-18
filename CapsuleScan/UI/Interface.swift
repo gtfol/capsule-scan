@@ -40,6 +40,7 @@ extension ToolbarContent {
 struct InfoButton: View {
     let title: String
     let paragraphs: [String]
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     @State private var showingInfo = false
 
     var body: some View {
@@ -72,9 +73,12 @@ struct InfoButton: View {
                     }
                 }.padding(20)
             }
-            .frame(idealWidth: 280, maxWidth: 320, idealHeight: 260, maxHeight: 420)
+            .frame(idealWidth: dynamicTypeSize.isAccessibilitySize ? nil : 280,
+                   maxWidth: dynamicTypeSize.isAccessibilitySize ? .infinity : 320,
+                   idealHeight: dynamicTypeSize.isAccessibilitySize ? nil : 260,
+                   maxHeight: dynamicTypeSize.isAccessibilitySize ? .infinity : 420)
             .foregroundStyle(CapsuleStyle.text)
-            .presentationCompactAdaptation(.popover)
+            .presentationCompactAdaptation(dynamicTypeSize.isAccessibilitySize ? .sheet : .popover)
             .preferredColorScheme(.dark)
         }
     }
