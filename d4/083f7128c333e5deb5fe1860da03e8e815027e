@@ -1,0 +1,41 @@
+CapsuleScanTests/PersistenceTests.swift
+  s_0521f8d73d6032::t_c240a703780652 159-184
+CapsuleScan/UI/SettingsView.swift
+  s_0521f8d73d6032::t_c292c95b7cc001 40,96
+  s_0521f8d73d6032::t_304ca5c510a265 9,27-28,55,59-60,65-67,73-76,88-93,99,103-104
+CapsuleScan/Core/Credentials.swift
+  s_0521f8d73d6032::t_304ca5c510a265 4
+CapsuleScan/AppServices.swift
+  s_0521f8d73d6032::t_304ca5c510a265 19,43,48,79-96
+  s_0521f8d73d6032::t_f26ad87f65cd4b 44-45
+docs/privacy.md
+  s_0521f8d73d6032::t_982be64fb2accf 1-35
+README.md
+  s_0521f8d73d6032::t_c292c95b7cc001 34
+CapsuleScan/UI/ItemEditorView.swift
+  s_0521f8d73d6032::t_c292c95b7cc001 16
+docs/verification.md
+  s_0521f8d73d6032::t_6ba4d54638bfe4 5-8
+docs/support.md
+  s_0521f8d73d6032::t_982be64fb2accf 1-21
+CapsuleScan.xcodeproj/project.pbxproj
+  s_0521f8d73d6032::t_cc7bef8657c054 404,424
+scripts/generate-project.py
+  s_0521f8d73d6032::t_e49344e01d5d59 47
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "d4083f7128c333e5deb5fe1860da03e8e815027e",
+  "prompts": {},
+  "sessions": {
+    "s_0521f8d73d6032": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0836b-e052-7f82-9502-659c23c1b21f",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Allen Lin <allenlinsh@gmail.com>"
+    }
+  }
+}
