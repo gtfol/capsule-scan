@@ -1,0 +1,33 @@
+marketing/app-store/render.py
+  s_0521f8d73d6032::t_77665e7dcbd669 87-106
+  s_0521f8d73d6032::t_b70bcd85e00d8e 1-52,59-65,67-70,72-76,78-86,107
+  s_0521f8d73d6032::t_90f91a851aa6b0 53-58,66,71,77
+marketing/app-store/README.md
+  s_0521f8d73d6032::t_63dd9e291c7270 14
+  s_0521f8d73d6032::t_a486f7595c30f4 18
+  s_0521f8d73d6032::t_77665e7dcbd669 1-13,15-17,19-24
+docs/verification.md
+  s_0521f8d73d6032::t_60d49d3f0e63e7 5-8,11
+marketing/app-store/assets/Lato-OFL.txt
+  s_0521f8d73d6032::t_ef4984ba3e774f 1-93
+marketing/app-store/gallery-entry.swift
+  s_0521f8d73d6032::t_414f36a8eda618 1-60
+marketing/app-store/index.html
+  s_0521f8d73d6032::t_f6df6199146e81 1-16
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "20307f33f0d953510596f8a96c0b318316931b31",
+  "prompts": {},
+  "sessions": {
+    "s_0521f8d73d6032": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0836b-e052-7f82-9502-659c23c1b21f",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Allen Lin <allenlinsh@gmail.com>"
+    }
+  }
+}
